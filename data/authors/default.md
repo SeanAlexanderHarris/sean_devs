@@ -1,16 +1,18 @@
 ---
-name: Tails Azimuth
+name: Sean Alexander Harris
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+occupation: Software Engineer
+company: https://www.cinch.co.uk/
+email: sean@seandevs.com
+twitter: https://twitter.com/SeanHAlexander
+linkedin: https://www.linkedin.com/in/seanhalexander
+github: https://github.com/SeanAlexanderHarris
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+I engineer at [cinch](https://www.cinch.co.uk/). I work with my team to build well architected serverless systems to help improve the way cinch and its partners work together. As the "automation engineer" on the team, I am also chiefly responsible for leading on strong devops practices &maintaining deep observability.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+I'm a big advocate of using Domain Driven Design to understand and model systems as well as eventsourcing & CQRS where appropriate (which it often is in my experience).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Previously, I taught secondary school English in Liverpool with the educational charity [TeachFirst](https://www.teachfirst.org.uk/).
+
+In my free time, I love to read, [cycle](https://www.strava.com/athletes/1847099), travel, and [code](https://github.com/SeanAlexanderHarris).
