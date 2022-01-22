@@ -1,22 +1,21 @@
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
-  language: 'en-us',
+  title: 'SeanDevs',
+  author: 'Sean Harris',
+  headerTitle: 'seanDevs',
+  description: 'Thoughts on what I\'m building, learning, reading, & riding',
+  language: 'en-uk',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
+  email: 'sean.alexander.harris.29@googlemail.com',
+  github: 'https://github.com/SeanAlexanderHarris',
+  twitter: 'https://twitter.com/SeanHAlexander',
   youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  linkedin: 'https://www.linkedin.com/in/seanhalexander',
+  locale: 'en-UK',
   analytics: {
     // supports plausible, simpleAnalytics, umami or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
