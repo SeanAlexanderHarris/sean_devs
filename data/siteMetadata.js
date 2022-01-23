@@ -4,7 +4,7 @@ const siteMetadata = {
   headerTitle: 'seanDevs',
   description: "Thoughts on what I'm building, learning, reading, & riding",
   language: 'en-uk',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://www.seandevs.com',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
