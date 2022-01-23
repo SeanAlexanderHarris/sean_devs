@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'SeanDevs',
   author: 'Sean Harris',
   headerTitle: 'seanDevs',
-  description: 'Thoughts on what I\'m building, learning, reading, & riding',
+  description: "Thoughts on what I'm building, learning, reading, & riding",
   language: 'en-uk',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
@@ -26,7 +26,7 @@ const siteMetadata = {
   newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo
     // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
+    provider: ' ', // 'buttondown',
   },
   comment: {
     // Select a provider and use the environment variables associated to it

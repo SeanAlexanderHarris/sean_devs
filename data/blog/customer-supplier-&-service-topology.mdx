@@ -1,0 +1,52 @@
+---
+title: 'DDD Customer Supplier relationships & service team topology'
+date: '2021-10-11'
+tags: ['eventsourcing', 'acl', 'DDD', 'team topologies']
+draft: true
+summary: 'Examining a DDD Customer-Supplier Relationship in Light of a Service Team Topology'
+---
+
+Eric Evans describes a Domain Driven Design 'Customer-Supplier' relationship between bounded contexts
+as one in which although the customers influence the data a supplier provides, it is the supplier who
+ultimately determines what and how information is transferred in the relationship. Manuel Pais and
+Matthew Skelton describe a Service team in their exploration of 'Team Topologies' as ...
+Where do the respective niches of these concepts overlap and diverge? To what extent to these ideas
+compliment or conflict with each other? Practically, how might exploring these questions be a means
+for an engineer to better understand and design components of a system that have an upstream-downstream
+aspect?
+
+# Convergence
+
+The concepts of Domain Driven Design and Team Topologies converge on:
+
+# Approach
+
+It is also worth noting where the the concepts approach each other, but do not overlap, more through virtue
+of identifying where we might usefully bridge those gaps.
+
+# Divergence
+
+# Compliments
+
+# Conflicts
+
+# Implications
+
+# Implementations
+
+# Example
+
+You and your team have been tasked with building a B2B based service. The customers and users
+who will use your service already sell a single type of asset X via the
+
+Imagine a system best characterised as 'joined-at-the-database' in the team topologies sense.
+This database powers a B2C based set of services through a mixture of messages and http apis.
+The database aims to be
+a 'single source of truth' for data for the business. The messages published by the service
+concern a single type of asset X. For reasons lost in the mist of undocumented time, the data
+service emits a combination of messages: some could be described as 'domain events' (roughly
+hewing to an event arising due to a domain specific piece of business logic); others as
+'property sourced' events (describing a database record property changing without context,
+intent, or reason, e.g. nameChanged).
+
+# Conclusions

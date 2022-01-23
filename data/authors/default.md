@@ -1,6 +1,6 @@
 ---
 name: Sean Alexander Harris
-avatar: /static/images/avatar.png
+avatar: /static/images/seanprofile.jpeg
 occupation: Software Engineer
 company: https://www.cinch.co.uk/
 email: sean@seandevs.com
