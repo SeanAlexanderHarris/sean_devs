@@ -1,4 +1,4 @@
-![tailwind-nextjs-banner](/public/static/images/twitter-card.png)
+![tailwind-nextjs-banner](/public/static/images/twitter-card.jpeg)
 
 # Tailwind Nextjs Starter Blog
 
@@ -30,7 +30,7 @@ Feature request? Check the past discussions to see if it has been brought up pre
 - [fiqrychoerudin.dev](https://www.fiqrychoerudin.dev/) - simple portfolio.
 - [irvin.dev](https://www.irvin.dev/) - Irvin Lin's personal site. Added YouTube embedding.
 - [the all JavaScript Blog](https://the-all-javascript-blog.vercel.app/) - a JavaScript enlightenment blog uses this
-- [KirillSo.com](https://www.kirillso.com/) - Personal blog & website. 
+- [KirillSo.com](https://www.kirillso.com/) - Personal blog & website.
 
 Using the template? Feel free to create a PR and add your blog to this list.
 
