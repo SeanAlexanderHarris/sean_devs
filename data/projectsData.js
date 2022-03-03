@@ -1,10 +1,10 @@
 const projectsData = [
-  // {
-  //   title: 'Intermittent Book Club',
-  //   description: `Read so far: Ulysses by James Joyce, Infinite Jest by David Foster Wallace. Currently reading: Wolf Hall by Hilary Mantell`,
-  //   imgSrc: '/static/images/google.png',
-  //   href: 'https://www.google.com',
-  // },
+  {
+    title: 'Sefton Park Social',
+    description: `A web app to help people organise activities in Sefton Park, South Liverpool`,
+    imgSrc: '/static/images/sefton_park_skyview.jpeg',
+    href: 'https://github.com/SeanAlexanderHarris/sefton-park-social',
+  },
   // {
   //   title: 'JOGOL Ride',
   //   description: `Cycle from John O Groats to Lands End, tip to tail of this sceptred isle in one long rolling ride.`,
