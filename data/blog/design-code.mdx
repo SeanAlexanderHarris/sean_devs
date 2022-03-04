@@ -1,0 +1,148 @@
+---
+title: 'DDD, Naming, & Developers as Designers'
+date: '2022-02-26'
+tags: ['code', 'design', 'DDD', 'naming']
+draft: false
+summary: '(Domain Driven) Design Discipline in Code'
+---
+
+```
+"Well written code can be very communicative, but the message it conveys is
+not guarunteed to be accurate. Oh, the reality of the behaviour caused by a
+section of code is inescapable. But a method name can be ambiguous, misleading,
+or out of date compared to the internals of the method. The assertions in a
+test is rigourous, but the story told by variable names and the organisation
+of the code is not. Good programming style keeps this connection as direct as
+possible, but it is still an exercise in self discipline. It takes fastidiousness
+to write code that doesn't just do the right thing but also says the right thing."
+```
+
+_Evans, Eric, [Domain Driven Design: Tackling Complexity in the Heart of Software](https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215),_ _p.40_
+
+#### Key Terms
+
+1. _Domain_ - the business model being represented in code
+2. _Ubiquitous language_ - the specialised, business language & jargon used to communicate consistently & meaningfully about the domain
+
+```javascript
+const namedWithDomainAndDesignInMind = trafficWardenIssuedFine()
+// You know future you is thanking present you
+
+const idoiomaticallyNamedWithPairThink = penaltyRes()
+// Future you despairs with younger, wilder you
+```
+
+My colleague [Emily](https://www.linkedin.com/in/emily-cheshire-uxdesigner/), a UX Designer, linked me to
+a [great short talk](https://www.youtube.com/watch?v=s1jVS96nJHM&t=126s) by one of her old colleagues [Jamie
+Dickinson](https://www.linkedin.com/in/dicko/) at Money Super Market about how everybody
+can think of themselves as a designer. Apparently, the [tweet](https://twitter.com/jmspool/status/836955987860914176?lang=en)
+by [Jared Spool](https://www.uie.com/jared-live/) that "everyone is a designer" sparked a lot of discussion.
+Many people did not agree.
+
+My penny's worth is that I would not call myself a designer. However, I would happily say that a code base or
+architecture could be poorly designed so I must already have internalised some considerations of design to my
+engineering. The talk made me wonder what lessons we can draw from the discipline of design thinking that could
+help improve code written with domain driven design (DDD) in mind. Now that applications, infrastructure, & dashboards
+can be all be noted as code, any marginal gain in the usability (& design) of code can be multiplied many times over.
+Here, I want to focus specifically on naming: on readability as usability and how the tenants of design Jamie Dickinson
+describes, can relate to Eric Evans' thoughts on code that 'doesn't just do the right thing but also says the right thing.'
+
+It might seem obvious to say that we (engineers) are both the creators and the users. I'd still challenge that when
+you've been working with people in a given domain for a while, it is easy to fall into "pair think" or "mob think"
+where, despite the best of intentions, it can be hard to imagine not having fluency with the domain. This means that
+it can be easy for terse and idiomatic but not necessarily readable and domain-influenced code to slip in.
+
+Concise !== Clear and vice versa.
+
+The code below saves characters with shortened and abbreviated names. It was / is probably intelligible to the dev
+pair who wrote it. If they give it to the desginer working on the gazillion dollar traffic warden software contract,
+would they be able to have a good punt at deciphering what it is doing (in domain terms)?
+
+```javascript
+//
+function handleFinePenMsg({
+    prev,
+    cmd,
+}: CmdHndleArg<FinePenMsg>): Res<FinePenEvt> {
+    if (!state.status) {
+        return logicError(`dateTime out of range`)
+    }
+
+    const evt: FinePenEvt = createEvt('FinePenEvt', cmd)
+
+    return {
+        success: true,
+        value: [evt],
+    }
+})
+```
+
+Code named with the domain should mean anyone with a working knowledge of parking fines in the UK can grasp what this function is doing:
+
+```javascript
+function handleTrafficWardenIssueParkingFineCommand({
+  trafficWardenState,
+  command,
+}: CommandHandlerInput<TrafficWardenIssueParkingFineCommand>): Result<TrafficWardenIssuedParkingFine> {
+  if (state.status !== Warden.OFF_DUTY) {
+    return domainLogicError(
+      `Warden cannot issue fine outside of shift hours. Current status: ${state.status}`
+    )
+  }
+
+  const event: TrafficWardenIssuedParkingFine = createEvent(
+    'TrafficWardenIssuedParkingFine',
+    command
+  )
+
+  return {
+    success: true,
+    value: [event],
+  }
+}
+```
+
+## Spend characters naming
+
+Brevity can be the enemy of clarity. Devs tend to like conciseness, me included. However, I am a sucker for spending
+a few extra characters considering (often more verbose) domainSpecific names that more accurately describes how the
+function &/or variable relates to the domain model. A few characters worth of brevity now is not necessarily time
+saved when an engineer new to the domain is reading it in a year's time. If I am in doubt, I'll be wordy & use the
+(hopefully documented) ubiquitous language. Aiming for 'self documenting' code in domain terms isa caring move for
+future devs (& future you probably).
+
+## Always include ubiquitous language
+
+Jamie makes a good point about constraints actually being useful & providing good guard rails around which you can
+be quite creative. "All names should include a reference to a ubiquitous language term" might not be a bad place
+to start. Yes, I know, there will immediately be a dozen instances you can think of where that helps rather than
+hinders. That's all well and good but perhaps the discipline of thining through **why** that is the case will
+prompt the team to be more conscientous about using domain terminology more widely, consistently, and appropriately
+when naming. That in turn should lead to code that reflects the domain model more accurately.
+
+## The Noob and the Box
+
+Jamie suggests being "curious & play the role of a newbie". I think we could expand this to include "newbie to
+your domain". Jamie suggests avoiding narrowly focused questions that only attain binary answers and do not require
+considering a user's point of view because they likely cannot then address a design problem. Similarly, he suggets
+that the cliched directive to "think outside the box" is often unhelpful in design thinking terms. There are two
+helpful parallels here. Firstly, whilst in problem solving, approaching a problem from a novel perspective can be a
+useful technique, when writing code, familiarity and convention are usually an engineer's friend. Secondly, one
+purpose of learning, documenting, & using a domain's ubiquitous language is to _avoid_ imaginative new terminology that
+obfuscates, rather than reveals, truths about the behaviour a domain model describes. In my experience, more often
+than not, the ubiqutious langauge provides a good constraint demanding you be creative and thoughtful with your naming.
+So, with integrating Domain Driven "Naming" in two simple questions as my constraint, I suggest using the following
+questions as part of your naming process:
+
+## 1. Would a domain noob engineer get this?
+
+Or in other words: if I was new to, or unfamiliar with, this domain or subdomain, _how_ would I be able to relate
+this code to the domain model?
+
+## 2. Would a non engineer domain-fluent team member get this?
+
+Or in other words: if I showed only the variable & function names to a non-engineering colleague on my team who was
+familiar with the ubiquitous language of the domain, _how_ would they be able to relate the function to the domain
+reasonably accurately?
+
+Please share any thoughts you have on the topic :)

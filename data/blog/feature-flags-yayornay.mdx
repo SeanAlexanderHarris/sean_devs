@@ -1,0 +1,123 @@
+---
+title: 'Flags? What are they good for?'
+date: '2022-01-30'
+tags: ['feature flags', 'trunk based development', 'release', 'deploy', 'devops']
+draft: true
+summary: 'Thinking about feature flags..'
+---
+
+**The scenario**
+
+Our team is about to release a feature that allows cinch partners to price the vehicles they are selling
+on the cinch platform.
+
+The pricing widget has been developed behind a simple feature flag that uses user roles to govern whether
+or not to render the relevant modal. Our product owner led discovery that revealed the features that were
+likely to be deliverable and impactful. Our business analysts detailled the business context that allowed
+us to plan our interactions with other systems and be mindful of bounded contexts to help us maintain a
+clean architecture. Our designer created designs for the user interactions and experiences to optimise how
+users would encounter pricing widget. In short, we were heroes.
+
+We've all worked hard together but I can't help but think we could deliver smaller increments, more quickly
+together by using _feature flags_.
+
+Let me retell the story above but in a world where the team is using highly configurable feature flags to
+improve and accelerate their progress.
+
+Engineers implemented three different designs behind feature flags that Emily, our designer, was able to
+switch on (release) for short planned periods in proudction whilst on a call with partners so she could
+get live feedback on in-production designs. The designs were "dumb" insofar as they were not backed by any
+api calls or writes to databases, but nevertheless they provided a "real" feature to work with. Based off
+of these feedback, Emily was able to adjsut the designs, deprecate options for two on the feature flag, and
+plan with the team to enrich the remaining successful design. A key part of the user experience is how they
+encounter error messages and flows - both interations and copy are important. Again, after engineers had
+deployed two different copy & error handling implementations, Emily was able to release the iteration to two
+different partners & record the user sessions via Datadog's real user monitoring (RUM) functionality to use
+as evidence for a decision. When the secure, tested feature is ready, the team can coordinate and the product
+owner can schedule the 'ring release' for the next morning. That release can begin with smaller or engaged
+partners and, as long as any errors fall within acceptable parameters, continue to release to larger partners.
+If at any point there should be some unforeseen and potentially catastrophic error (in which case something
+has gone wrong earlier in the development process), the feature can be retracted via a feature flag "kill switch".
+
+---
+
+- Engineers: control the feature flag in-code by checking against user roles
+- UX: ...
+- Product: discovered from users which features would likely be successful
+
+Our team is planning to begin work on a feature that allows cinch parters to publish the vehicles they
+plan to sell to the cinch platform. How do we think feature flags could improve our performance now?
+
+- The publishing feature is developed behind a flag
+- Engineers:
+- UX: Emily can independently release "UI/UX only" feature designs to garner qualitative RUM recorded
+  sessions from Datadog or get anecdotal, qualitative feedback from partners.
+- Product: Gemma can independently ...
+- Business Analyst: Adam can independently ...
+
+---
+
+**The Why**
+
+As engineers practicing trunk based development & continuous deployment, we often
+want to be able to _deploy_ to production without necessarily _releasing_ to production.
+
+Ideally, to shorten feedback loops and iterate well, we'd like to release only to users
+who are ready to use young features and constructively criticise them or conduct "ring
+releases" and progessively release features to increasing numbers of users if significant
+errors are not occuring.
+
+I think there's more to this than meets the eye from an engineering & sociotechnical
+perspective when we think about how we can keep 'shifting left' (find & fix problems
+earlier in the development process).
+
+If a designer has two or three relatively simple designs for a widget, once the developers
+have deployed them behind some kind of barrier, why should engineers be the gatekeepers for
+the designer to 'release' the widget to users for feedback?
+
+If designers, business analysts, or product owners want to conduct experiments, get in-production
+qualitative feedback, or just release features they know customers are ready for, shouldn't they be
+able to?
+
+The benefits surely flow back to engineering in that by gathering feedback constantly;
+changes are small, impactful iterations; bugs & problems are discovered earlier; new improvements
+are imagined earlier?
+
+Yes, engineers have to ensure releases are secure, easily observable, & that data from flagged
+releases can easily be collated & analysed. However, this should be par for the course of
+development anyway.
+
+---
+
+**What qualities would a feature flagging solution need to achieve this scenario?**
+
+_Available at run time_
+
+As described above, the point is to _separate_ release from deployment so we
+shouldn't have to run a deployment pipeline in order to switch a feature on or configure a flag.
+
+_Deeply configuable_
+
+Flags should facilitate discretely releasing: to individual or small groups of users; to direct
+proportions of traffic; or based on flag links to errors & monitoring.
+
+_Auditable & removable_
+
+With power comes responsibility: who's implemented & configured which flag & when is important
+information that we want to be able to read in an audit log just like our commit histories.
+
+---
+
+**In summary**
+
+There are technical reasons for adopting feature flags:
+
+- Improves trunk based development by allowing safer, more frequent deployments
+- Separates _deployment_ from _release_
+
+There are sociotechnical reasons for adopting feature flags:
+
+- Non engnieers enabled to use releases to:
+  - plan & conduct experiments
+  - get early & continuous feedback from users
+  - share the benefits of flags coupled with observability
