@@ -8,7 +8,7 @@ summary: '(Domain Driven) Design Discipline in Code'
 
 ```
 "Well written code can be very communicative, but the message it conveys is
-not guarunteed to be accurate. Oh, the reality of the behaviour caused by a
+not guaranteed to be accurate. Oh, the reality of the behaviour caused by a
 section of code is inescapable. But a method name can be ambiguous, misleading,
 or out of date compared to the internals of the method. The assertions in a
 test is rigourous, but the story told by variable names and the organisation
@@ -28,7 +28,7 @@ _Evans, Eric, [Domain Driven Design: Tackling Complexity in the Heart of Softwar
 const namedWithDomainAndDesignInMind = trafficWardenIssuedFine()
 // You know future you is thanking present you
 
-const idoiomaticallyNamedWithPairThink = penaltyRes()
+const idiomaticallyNamedWithPairThink = penaltyRes()
 // Future you despairs with younger, wilder you
 ```
 
@@ -55,7 +55,7 @@ it can be easy for terse and idiomatic but not necessarily readable and domain-i
 Concise !== Clear and vice versa.
 
 The code below saves characters with shortened and abbreviated names. It was / is probably intelligible to the dev
-pair who wrote it. If they give it to the desginer working on the gazillion dollar traffic warden software contract,
+pair who wrote it. If they give it to the designer working on the gazillion dollar traffic warden software contract,
 would they be able to have a good punt at deciphering what it is doing (in domain terms)?
 
 ```javascript
@@ -116,21 +116,21 @@ future devs (& future you probably).
 Jamie makes a good point about constraints actually being useful & providing good guard rails around which you can
 be quite creative. "All names should include a reference to a ubiquitous language term" might not be a bad place
 to start. Yes, I know, there will immediately be a dozen instances you can think of where that helps rather than
-hinders. That's all well and good but perhaps the discipline of thining through **why** that is the case will
-prompt the team to be more conscientous about using domain terminology more widely, consistently, and appropriately
+hinders. That's all well and good but perhaps the discipline of thinking through **why** that is the case will
+prompt the team to be more conscientious about using domain terminology more widely, consistently, and appropriately
 when naming. That in turn should lead to code that reflects the domain model more accurately.
 
 ## The Noob and the Box
 
 Jamie suggests being "curious & play the role of a newbie". I think we could expand this to include "newbie to
 your domain". Jamie suggests avoiding narrowly focused questions that only attain binary answers and do not require
-considering a user's point of view because they likely cannot then address a design problem. Similarly, he suggets
+considering a user's point of view because they likely cannot then address a design problem. Similarly, he suggests
 that the cliched directive to "think outside the box" is often unhelpful in design thinking terms. There are two
 helpful parallels here. Firstly, whilst in problem solving, approaching a problem from a novel perspective can be a
 useful technique, when writing code, familiarity and convention are usually an engineer's friend. Secondly, one
 purpose of learning, documenting, & using a domain's ubiquitous language is to _avoid_ imaginative new terminology that
 obfuscates, rather than reveals, truths about the behaviour a domain model describes. In my experience, more often
-than not, the ubiqutious langauge provides a good constraint demanding you be creative and thoughtful with your naming.
+than not, the ubiquitous langauge provides a good constraint demanding you be creative and thoughtful with your naming.
 So, with integrating Domain Driven "Naming" in two simple questions as my constraint, I suggest using the following
 questions as part of your naming process:
 
