@@ -9,7 +9,7 @@ linkedin: https://www.linkedin.com/in/seanhalexander
 github: https://github.com/SeanAlexanderHarris
 ---
 
-I engineer at [cinch](https://www.cinch.co.uk/). I work with my team to build well architected serverless systems to help improve the way cinch and its partners work together. As the "automation engineer" on the team, I am also chiefly responsible for leading on strong devops practices & maintaining deep observability.
+I am an automation engineer at [cinch](https://www.cinch.co.uk/). I work with my team to build well architected serverless systems to help improve the way cinch and its partners work together. As the automation engineer on the team, I am chiefly responsible for leading on strong devops practices & maintaining deep observability.
 
 I'm a big advocate of striving for good devops practices, using Domain Driven Design to understand and model systems, as well as CQRS & eventsourcing where appropriate (which more and more I'm learning it often is).
 
