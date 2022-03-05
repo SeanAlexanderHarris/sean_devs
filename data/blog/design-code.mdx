@@ -1,5 +1,5 @@
 ---
-title: 'DDD, Naming, & Developers as Designers'
+title: 'DDD, Naming, and Developers as Designers'
 date: '2022-02-26'
 tags: ['code', 'design', 'DDD', 'naming']
 draft: false
@@ -22,7 +22,7 @@ _Evans, Eric, [Domain Driven Design: Tackling Complexity in the Heart of Softwar
 #### Key Terms
 
 1. _Domain_ - the business model being represented in code
-2. _Ubiquitous language_ - the specialised, business language & jargon used to communicate consistently & meaningfully about the domain
+2. _Ubiquitous language_ - the specialised, business language and jargon used to communicate consistently and meaningfully about the domain
 
 ```javascript
 const namedWithDomainAndDesignInMind = trafficWardenIssuedFine()
@@ -33,7 +33,7 @@ const idiomaticallyNamedWithPairThink = penaltyRes()
 ```
 
 My colleague [Emily](https://www.linkedin.com/in/emily-cheshire-uxdesigner/), a UX Designer, linked me to
-a [great short talk](https://www.youtube.com/watch?v=s1jVS96nJHM&t=126s) by one of her old colleagues [Jamie
+a [great short talk](https://www.youtube.com/watch?v=s1jVS96nJHMandt=126s) by one of her old colleagues [Jamie
 Dickinson](https://www.linkedin.com/in/dicko/) at Money Super Market about how everybody
 can think of themselves as a designer. Apparently, the [tweet](https://twitter.com/jmspool/status/836955987860914176?lang=en)
 by [Jared Spool](https://www.uie.com/jared-live/) that "everyone is a designer" sparked a lot of discussion.
@@ -42,8 +42,8 @@ Many people did not agree.
 My penny's worth is that I would not call myself a designer. However, I would happily say that a code base or
 architecture could be poorly designed so I must already have internalised some considerations of design to my
 engineering. The talk made me wonder what lessons we can draw from the discipline of design thinking that could
-help improve code written with domain driven design (DDD) in mind. Now that applications, infrastructure, & dashboards
-can be all be noted as code, any marginal gain in the usability (& design) of code can be multiplied many times over.
+help improve code written with domain driven design (DDD) in mind. Now that applications, infrastructure, and dashboards
+can be all be noted as code, any marginal gain in the usability (and design) of code can be multiplied many times over.
 Here, I want to focus specifically on naming: on readability as usability and how the tenants of design Jamie Dickinson
 describes, can relate to Eric Evans' thoughts on code that 'doesn't just do the right thing but also says the right thing.'
 
@@ -106,14 +106,14 @@ function handleTrafficWardenIssueParkingFineCommand({
 
 Brevity can be the enemy of clarity. Devs tend to like conciseness, me included. However, I am a sucker for spending
 a few extra characters considering (often more verbose) domainSpecific names that more accurately describes how the
-function &/or variable relates to the domain model. A few characters worth of brevity now is not necessarily time
-saved when an engineer new to the domain is reading it in a year's time. If I am in doubt, I'll be wordy & use the
+function and/or variable relates to the domain model. A few characters worth of brevity now is not necessarily time
+saved when an engineer new to the domain is reading it in a year's time. If I am in doubt, I'll be wordy and use the
 (hopefully documented) ubiquitous language. Aiming for 'self documenting' code in domain terms isa caring move for
-future devs (& future you probably).
+future devs (and future you probably).
 
 ## Always include ubiquitous language
 
-Jamie makes a good point about constraints actually being useful & providing good guard rails around which you can
+Jamie makes a good point about constraints actually being useful and providing good guard rails around which you can
 be quite creative. "All names should include a reference to a ubiquitous language term" might not be a bad place
 to start. Yes, I know, there will immediately be a dozen instances you can think of where that helps rather than
 hinders. That's all well and good but perhaps the discipline of thinking through **why** that is the case will
@@ -122,13 +122,13 @@ when naming. That in turn should lead to code that reflects the domain model mor
 
 ## The Noob and the Box
 
-Jamie suggests being "curious & play the role of a newbie". I think we could expand this to include "newbie to
+Jamie suggests being "curious and play the role of a newbie". I think we could expand this to include "newbie to
 your domain". Jamie suggests avoiding narrowly focused questions that only attain binary answers and do not require
 considering a user's point of view because they likely cannot then address a design problem. Similarly, he suggests
 that the cliched directive to "think outside the box" is often unhelpful in design thinking terms. There are two
 helpful parallels here. Firstly, whilst in problem solving, approaching a problem from a novel perspective can be a
 useful technique, when writing code, familiarity and convention are usually an engineer's friend. Secondly, one
-purpose of learning, documenting, & using a domain's ubiquitous language is to _avoid_ imaginative new terminology that
+purpose of learning, documenting, and using a domain's ubiquitous language is to _avoid_ imaginative new terminology that
 obfuscates, rather than reveals, truths about the behaviour a domain model describes. In my experience, more often
 than not, the ubiquitous langauge provides a good constraint demanding you be creative and thoughtful with your naming.
 So, with integrating Domain Driven "Naming" in two simple questions as my constraint, I suggest using the following
@@ -141,7 +141,7 @@ this code to the domain model?
 
 ## 2. Would a non engineer domain-fluent team member get this?
 
-Or in other words: if I showed only the variable & function names to a non-engineering colleague on my team who was
+Or in other words: if I showed only the variable and function names to a non-engineering colleague on my team who was
 familiar with the ubiquitous language of the domain, _how_ would they be able to relate the function to the domain
 reasonably accurately?
 
